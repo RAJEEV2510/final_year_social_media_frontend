@@ -11,9 +11,25 @@ function Video() {
   const [image, setImage] = useState();
   const [url, setUrl] = useState();
   const [loading, setLoading] = useState(false);
-
+  const [allVideo,setAllVideo]=useState([])
   //notification
   const notify = (value) => toast(value);
+
+  const fetchAllVideos=async ()=>{
+
+    const videoData=await fetch("http://localhost:5000/video")
+    const allVideo=await videoData.json()
+    setAllVideo(allVideo.data)
+  }
+
+
+  useEffect(()=>{
+
+
+    fetchAllVideos()
+
+
+  },[])
 
   const postDetails = async () => {
     setLoading(true);
@@ -30,6 +46,7 @@ function Video() {
     setLoading(false);
     console.log(urlData);
     notify("success fully uploaded");
+    window.location.href="/video"
 
     //upload data to the server
     const user=JSON.parse(localStorage.getItem("userData2"))
@@ -72,7 +89,7 @@ function Video() {
         <div
           style={{
             margin: "100px auto",
-            height: "70%",
+            height: "400px",
             maxWidth: "500px",
             padding: "20px",
             border: "1px solid blue",
@@ -104,7 +121,30 @@ function Video() {
 
           <ToastContainer></ToastContainer>
         </div>
-      )}
+)}
+
+          {/* video cards */}
+          <div className="videos" >
+            {allVideo.length>0?allVideo.map((value)=>{
+              console.log(value)
+              return(
+                <>
+                    <div className="video_card">
+                      <div className="video_card_header">
+                        <div className="video_card_name">
+                            {value.postedBy}
+                        </div> 
+                      </div>
+                    <video  controls>
+                   <source src={value.postedByUrl} />
+
+                         </video>
+                    </div>
+                </>
+              )
+            }):"No video existing"}
+          </div>
+
     </>
   );
 }

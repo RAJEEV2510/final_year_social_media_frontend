@@ -16,7 +16,7 @@ const GetLocation = React.memo(({ handleLocation, location }) => {
     const { latitude, longitude } = pos.coords;
     const url =
       `https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=` +
-      process.env.REACT_APP_WEATHER_API_KEY;
+     "1f701621ea254a1cb3113097e5971fe4";
     axios
       .get(url)
       .then(function (response) {

@@ -11,7 +11,7 @@ import socket from "../socket/index"
 
 
 
-function Video() {
+function VideoCall() {
 	const [ me, setMe ] = useState()
 	const [ stream, setStream ] = useState()
 	const [ receivingCall, setReceivingCall ] = useState(false)
@@ -159,4 +159,4 @@ socket.on("endCall",()=>{
 	)
 }
 
-export default Video
+export default VideoCall

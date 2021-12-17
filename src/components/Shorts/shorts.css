@@ -22,3 +22,35 @@
     
 
 }
+
+.videos{
+    display: flex;
+    flex-direction:row ;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+.video_card{
+    margin: 20px;
+    height: 300px;
+    width: 400px;
+    background-color: #202022;
+    padding: 5px;
+    
+    border-radius:10px ;
+
+}
+.video_card_name{
+ 
+    color:white;
+    font-size: 20px;
+    float:left;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-family: cursive;
+}
+
+.video_card video{
+    height: 80%!important;
+    width: 100%!important;
+}

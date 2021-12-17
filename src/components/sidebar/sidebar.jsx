@@ -44,7 +44,7 @@ const Sidebar = ({uid,closeSidebar}) => {
                
                   <PublishIcon  style={{color:"white",fontSize:"40px",marginLeft:"-10px"}}/>
              
-                <span className="text">Video Upload</span>
+                <span className="text">Video Feed</span>
               </NavLink>
             </li>
             <li className="sidebar__item">
