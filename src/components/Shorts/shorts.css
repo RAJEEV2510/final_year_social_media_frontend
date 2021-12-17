@@ -1,0 +1,24 @@
+.btn{
+    display: flex;
+    width: 100%;
+    margin-left: -2px;
+    background-color:#202022;
+    color:white;
+    padding: 10px;
+}
+.waves-light{
+
+    width: 50%;
+    background-color: #202022;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    margin:25px 20%;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+    
+
+}

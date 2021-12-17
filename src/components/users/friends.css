@@ -1,0 +1,77 @@
+.friend_div{
+    width: 30%;
+    height: 220px;
+    background-color: #202022;
+    padding: 10px;
+    margin:6px;
+    border-radius: 20px;
+}
+.friend_parent{
+    display: flex;
+    flex-wrap:wrap ;
+    width: 100%;
+    font-size: 15px;
+    color: white;
+  
+    margin-bottom: 20px;
+}
+.friend_img{
+    height:  80%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.friend_below_info{
+    display: flex;
+    justify-content: space-between;
+}
+.friends__container{
+    height: 200px;
+    overflow-y: scroll;
+}
+.friend_call_icon{
+ 
+
+
+}
+@media only screen and (max-width: 600px) {
+   
+    .friends__container{
+      
+        overflow-y: scroll;
+        margin-bottom: 20px;
+    }
+    .friend_div{
+        width: 39%;
+        height: 220px;
+      
+        padding: 10px;
+        margin:6px;
+        border-radius: 20px;
+      
+    }
+    .friend_parent{
+        display: flex;
+        flex-wrap:wrap ;
+        width: 100%;
+        font-size: 15px;
+        color: white;
+        position: relative;
+      
+        justify-content: center;
+        margin:10px auto;
+    }
+    .friend_img{
+        margin-bottom: 10px;
+        height:  80%;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .friend_below_info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+
+  }

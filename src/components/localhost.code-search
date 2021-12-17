@@ -1,0 +1,64 @@
+# Query: localhost
+# ContextLines: 1
+
+14 results - 10 files
+
+.env:
+  1: REACT_APP_BACKEND_URL=https://socialbackends.herokuapp.com/api
+
+README.md:
+   9  Runs the app in the development mode.<br />
+  10: Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  11  
+
+src\index.js:
+  12  // REACT_APP_SALAT_API_KEY=9ba81b545emsh8ec3c41be845490p1db0e6jsncf03fd85530d
+  13: // REACT_APP_BACKEND_URL=http://localhost:5000/api
+  14  
+
+src\components\Map\Map.js:
+  19        const getFriends =async()=>{
+  20:         const friendsData=await  fetch("https://socialbackends.herokuapp.com/nearby")
+  21            const data=await friendsData.json();
+
+  41          
+  42:           fetch(`https://socialbackends.herokuapp.com/nearby`, {
+  43           method: "POST",
+
+src\components\posts\posts.js:
+  23  
+  24:     fetch("https://socialbackends.herokuapp.com/video").then((data)=>data.json()).then(data=>{
+  25  
+
+src\components\Shorts\Shorts.js:
+  42    console.log(videoData)
+  43:     fetch(`https://socialbackends.herokuapp.com/video`, {
+  44        method: "POST", // or 'PUT'
+
+src\components\socket\index.js:
+  2  
+  3: let socket = io('https://socialbackends.herokuapp.com/');
+  4  
+
+src\components\users\friends.jsx:
+  55      const loggedInId=JSON.parse(localStorage.getItem("userData2"))._id
+  56:     fetch(`https://socialbackends.herokuapp.com/friends/${loggedInId}`).then((data)=>data.json()).then(res=>{
+  57        console.log(res)
+
+src\components\users\profile\profile-board.jsx:
+  31  
+  32:     fetch(`https://socialbackends.herokuapp.com/allUser/${userId}`).then(data=>data.json()).then(res=>{
+  33  
+
+  52        console.log(data);
+  53:       fetch(`https://socialbackends.herokuapp.com/updateFriends`, {
+  54          method: "PATCH", // or 'PATCH'
+
+  75     
+  76:       fetch(`https://socialbackends.herokuapp.com/updateunFriends`, {
+  77          method: "PATCH", // or 'PATCH'
+
+src\components\VideoCall\VideoCall.js:
+  32  
+  33: 		fetch(`https://socialbackends.herokuapp.com/allUser/${calleeId}`).then(promise=>promise.json()).then((data)=>{
+  34  		console.log(calleeId)
