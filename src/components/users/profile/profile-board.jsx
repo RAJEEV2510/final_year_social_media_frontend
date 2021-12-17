@@ -31,6 +31,10 @@ const ProfileBoard = React.memo(({ user, isProfile, img, setImg }) => {
 
     fetch(`http://localhost:5000/allUser/${userId}`).then(data=>data.json()).then(res=>{
 
+
+      if(res!=null){
+
+      
       const loggedInUserFriends = res.friends;
       const friendId = loggedInUserFriends.filter((friend) => {
         return friend == user._id;
@@ -39,6 +43,12 @@ const ProfileBoard = React.memo(({ user, isProfile, img, setImg }) => {
       if (friendId.length >= 1) {
         setFriendState("Unfriend");
       } else setFriendState("Add Friend");
+
+    }
+    else setFriendState("Add Friend");
+
+
+
       })
     }, [])
 

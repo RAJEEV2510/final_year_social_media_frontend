@@ -45,6 +45,8 @@ export default function Map() {
             "Content-Type": "application/json",
        
       },
+
+      
           body: JSON.stringify(mapData),
         })
       .then((response) => response.json())
@@ -78,10 +80,10 @@ export default function Map() {
       >
         {nearByFriends.length>0?nearByFriends?.map((value)=>{
 
-console.log(value.latti)
+console.log(value)
                   return (<>
 
-
+                    
                 <Marker latitude={Number(value.latti)} longitude={Number(value.longi)} offsetLeft={-20} offsetTop={-10}>
         <RoomIcon style={{fontSize:viewport.zoom*2,color:"slateblue"}}></RoomIcon>
       </Marker>
@@ -90,10 +92,10 @@ console.log(value.latti)
           anchor="bottom" >
           
             <div style={{width:"80px"}}>
-        <Avatar alt="Remy Sharp" src={value.creator.img} style={{width:"80px",height:"80px"}} />
-        <h4>{value.creator.name}</h4>
+        <Avatar alt="Remy Sharp" src={value.creator?.img} style={{width:"80px",height:"80px"}} />
+        <h4>{value.creator?.name}</h4>
                     </div>
-                  <a href={`/profile/${value.creator._id}`} style={{fontSize:"20px"}} >Visit pofile</a>
+                  <a href={`/profile/${value.creator?._id}`} style={{fontSize:"20px"}} >Visit pofile</a>
         </Popup>
             </>
           )

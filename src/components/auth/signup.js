@@ -23,6 +23,7 @@ const Signup = () => {
         "post",
         data
       );
+      console.log(data)
       handleGetin(responseData.data);
     } catch (err) {
       console.log(err, error);

@@ -55,6 +55,9 @@ const Friends = React.memo(() => {
     const loggedInId=JSON.parse(localStorage.getItem("userData2"))._id
     fetch(`http://localhost:5000/friends/${loggedInId}`).then((data)=>data.json()).then(res=>{
       console.log(res)
+      if(res==null)
+      setFriendsData([])
+      else
       setFriendsData(res.friends)
     })
 
@@ -62,10 +65,10 @@ const Friends = React.memo(() => {
    useEffect(()=>{
     document.title="Friends";
 
-    fetch( process.env.REACT_APP_BACKEND_URL + `/users/rooms/${id}`).then((data)=>data.json()).then((data)=>{
-      console.log(data)
+    // fetch( process.env.REACT_APP_BACKEND_URL + `/users/rooms/${id}`).then((data)=>data.json()).then((data)=>{
+    //   console.log(data)
    
-    })
+    // })
 
   },[])
 

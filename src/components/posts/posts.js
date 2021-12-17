@@ -27,8 +27,6 @@ const Posts = React.memo(({ currentUser }) => {
     
       }
     )
-
-
   },[])
 
 
