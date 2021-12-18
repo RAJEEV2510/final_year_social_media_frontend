@@ -21,7 +21,7 @@ const Posts = React.memo(({ currentUser }) => {
 
   useEffect(()=>{
 
-    fetch("http://localhost:5000/video").then((data)=>data.json()).then(data=>{
+    fetch("https://socialbackends.herokuapp.com/video").then((data)=>data.json()).then(data=>{
 
       setVideoData(data.data)
     
