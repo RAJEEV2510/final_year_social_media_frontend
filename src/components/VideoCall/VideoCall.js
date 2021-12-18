@@ -30,7 +30,7 @@ function VideoCall() {
 
 		const calleeId=localStorage.getItem("calleeId")
 
-		fetch(`https://socialbackends.herokuapp.com/allUser/${calleeId}`).then(promise=>promise.json()).then((data)=>{
+		fetch(`http://localhost:5000/allUser/${calleeId}`).then(promise=>promise.json()).then((data)=>{
 		console.log(calleeId)
 		console.log(data)
 		    setCalleeId(data.socketId)
@@ -88,7 +88,7 @@ socket.on("endCall",()=>{
 	const answerCall =() =>  {
 		setCallAccepted(true)
 		const peer = new Peer({
-			initiator: false,
+			
 			trickle: false,
 			stream: stream
 		})

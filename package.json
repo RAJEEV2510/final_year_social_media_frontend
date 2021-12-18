@@ -30,7 +30,7 @@
     "react-infinite-scroller": "^1.2.4",
     "react-linkify": "^1.0.0-alpha",
     "react-loader-spinner": "^4.0.0",
-    "react-map-gl": "^6.1.17",
+    "react-map-gl": "^5.3.10",
     "react-places-autocomplete": "^7.2.1",
     "react-redux": "^7.2.0",
     "react-reveal": "^1.2.2",
@@ -44,11 +44,13 @@
     "reactjs-file-uploader": "^1.0.8",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "serve": "^13.0.2",
     "simple-peer": "^9.11.0",
     "simple-react-video-thumbnail": "^0.0.7",
     "socket.io-client": "^2.3.0",
     "styled-components": "^5.3.3",
-    "validator": "^12.2.0"
+    "validator": "^12.2.0",
+    "worker-loader": "^3.0.8"
   },
   "scripts": {
     "start": "react-scripts start",

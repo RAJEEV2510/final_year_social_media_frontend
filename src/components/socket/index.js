@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
 
-let socket = io('https://socialbackends.herokuapp.com/');
+let socket = io('http://localhost:5000/');
 
 export default socket;

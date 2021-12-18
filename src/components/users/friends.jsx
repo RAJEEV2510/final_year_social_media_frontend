@@ -53,7 +53,7 @@ const Friends = React.memo(() => {
 
   useEffect(()=>{
     const loggedInId=JSON.parse(localStorage.getItem("userData2"))._id
-    fetch(`https://socialbackends.herokuapp.com/friends/${loggedInId}`).then((data)=>data.json()).then(res=>{
+    fetch(`http://localhost:5000/friends/${loggedInId}`).then((data)=>data.json()).then(res=>{
       console.log(res)
       if(res==null)
       setFriendsData([])
@@ -108,7 +108,6 @@ const Friends = React.memo(() => {
               <UserPlaceholder />
             </div>
           )}
-          
           {users.length && !loading && (
             <InfiniteScroll
               dataLength={length}

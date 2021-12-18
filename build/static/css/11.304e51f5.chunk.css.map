@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/posts/post.css"],"names":[],"mappings":"AAAA,WACI,YACJ,CACA,QACI,gBACJ","file":"11.304e51f5.chunk.css","sourcesContent":[".post-body{\r\n    padding: 10px;\r\n}\r\n.slider{\r\n    margin: 30px 10px;\r\n}"]}

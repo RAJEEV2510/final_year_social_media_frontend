@@ -29,7 +29,7 @@ const ProfileBoard = React.memo(({ user, isProfile, img, setImg }) => {
   useEffect( () => {
   
 
-    fetch(`https://socialbackends.herokuapp.com/allUser/${userId}`).then(data=>data.json()).then(res=>{
+    fetch(`http://localhost:5000/allUser/${userId}`).then(data=>data.json()).then(res=>{
 
 
       if(res!=null){
@@ -60,7 +60,7 @@ const ProfileBoard = React.memo(({ user, isProfile, img, setImg }) => {
         frndId: user._id,
       };
       console.log(data);
-      fetch(`https://socialbackends.herokuapp.com/updateFriends`, {
+      fetch(`http://localhost:5000/updateFriends`, {
         method: "PATCH", // or 'PATCH'
         headers: {
           "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const ProfileBoard = React.memo(({ user, isProfile, img, setImg }) => {
         frndId: user._id,
       };
    
-      fetch(`https://socialbackends.herokuapp.com/updateunFriends`, {
+      fetch(`http://localhost:5000/updateunFriends`, {
         method: "PATCH", // or 'PATCH'
         headers: {
           "Content-Type": "application/json",
