@@ -137,18 +137,7 @@ const Friends = React.memo(() => {
               <SvgSearch />
             </div>
           )}
-        </div>
-
-
-
-      
-      
-      
-      
-        
-      
-      
-      </div>
+        </div> </div>
       <h1 style={{textAlign:"center",color:"white",fontSize:"20px"}}> Friends</h1>
 
         <div className="friend_parent">    
@@ -166,7 +155,8 @@ const Friends = React.memo(() => {
               <div className="friend_call_icon">
             <Link to="/videocall" onClick={()=>{
               localStorage.setItem("calleeId",friend._id)
-            }}>  <button style={{background:"green",border:"none",padding:"3px", color:"white",borderRadius:"5px",cursor:"pointer",width:"30px"}}><PhoneCallbackIcon></PhoneCallbackIcon></button>
+              }}>
+              {/* <button style={{background:"green",border:"none",padding:"3px", color:"white",borderRadius:"5px",cursor:"pointer",width:"30px"}}><PhoneCallbackIcon></PhoneCallbackIcon></button> */}
             </Link>
               </div>
               <div className="friend_online"> 
