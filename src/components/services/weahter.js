@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../../shared/loading.js";
 import axios from "axios";
+
+import {getSunrise,getSunset} from 'sunrise-sunset-js'
 import { useSelector } from "react-redux";
 import {
   Sunrise,
@@ -16,14 +18,23 @@ const Weather = React.memo(() => {
   const [error, setError] = useState(null);
   const [data, setData] = useState();
   const user = useSelector((state) => state.currentUser);
+  const [sunrise,setSunrise]=useState("");
+  const [sunset,setSunset]=useState("")
+  
   const geolocationSuccess = (pos) => {
     const { latitude, longitude } = pos.coords;
-    const url =
-      `https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=1f701621ea254a1cb3113097e5971fe4`;
+    setSunrise(new Date(getSunrise(latitude,longitude)).toLocaleTimeString())
+    setSunset((new Date(getSunset(latitude,longitude))).toLocaleTimeString())
+   
+     
+    const url =`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=1f701621ea254a1cb3113097e5971fe4`;
     axios
       .get(url)
       .then(function (response) {
+
+        console.log(response)
         setData(response.data.data[0]);
+      
       })
       .catch(function (error) {
         setError(error.message);
@@ -61,6 +72,7 @@ const Weather = React.memo(() => {
     else if (hrs >= 12 && hrs <= 17) return "Good Afternoon";
     else if (hrs >= 17 && hrs <= 24) return "Good Evening";
   };
+  
 
   useEffect(() => {
     currentLocation();
@@ -143,7 +155,7 @@ const Weather = React.memo(() => {
                       </span>
                       <h3>sunrise:</h3>
                     </div>
-                    <h1>{data.sunrise}</h1>
+                    <h1>{sunrise}</h1>
                   </li>
                   <div className="seprator" />
                   <li className="weather__content--item">
@@ -153,7 +165,7 @@ const Weather = React.memo(() => {
                       </span>
                       <h3>sunset:</h3>
                     </div>
-                    <h1>{data.sunset}</h1>
+                    <h1>{sunset}</h1>
                   </li>
                   <div className="seprator" />
                   <li className="weather__content--item">

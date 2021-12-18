@@ -20,7 +20,9 @@ const CahtBody = React.memo(
         .toLocaleTimeString()
         .toString()
         .split(/[\s:]+/);
-      return x[0] + ":" + x[1] + " " + x[3];
+        const time=new Date(date).toLocaleTimeString()
+        console.log(time)
+      return time;
     };
     const handleFile = (text, fileLink) => {
       const x =
@@ -86,6 +88,7 @@ const CahtBody = React.memo(
           )}
           {messages.length > 0 &&
             messages.map((message, idx) => {
+              console.log( message.createdAt)
               if (idx > 0) lastSender = messages[idx - 1].user._id;
               if (idx !== 0 && compareDates(lastDate, message.createdAt))
                 lastDate = message.createdAt;
@@ -180,6 +183,7 @@ const CahtBody = React.memo(
                         </div>
                       )}
                       <span className="time">
+                    
                         {getMessageDate(message.createdAt)}
                       </span>
                     </div>
