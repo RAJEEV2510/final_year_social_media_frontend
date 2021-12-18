@@ -17,7 +17,7 @@ function Video() {
 
   const fetchAllVideos=async ()=>{
 
-    const videoData=await fetch("http://localhost:5000/video")
+    const videoData=await fetch("https://socialbackends.herokuapp.com/video")
     const allVideo=await videoData.json()
     setAllVideo(allVideo.data)
   }
@@ -57,7 +57,7 @@ function Video() {
   }
 
   console.log(videoData)
-    fetch(`http://localhost:5000/video`, {
+    fetch(`https://socialbackends.herokuapp.com/video`, {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",

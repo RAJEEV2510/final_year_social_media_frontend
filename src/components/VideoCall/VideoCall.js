@@ -30,7 +30,7 @@ function VideoCall() {
 
 		const calleeId=localStorage.getItem("calleeId")
 
-		fetch(`http://localhost:5000/allUser/${calleeId}`).then(promise=>promise.json()).then((data)=>{
+		fetch(`https://socialbackends.herokuapp.com/allUser/${calleeId}`).then(promise=>promise.json()).then((data)=>{
 		console.log(calleeId)
 		console.log(data)
 		    setCalleeId(data.socketId)

@@ -17,7 +17,7 @@ export default function Map() {
       const [nearByFriends,setNearByFriends]=useState([])
      
       const getFriends =async()=>{
-        const friendsData=await  fetch("http://localhost:5000/nearby")
+        const friendsData=await  fetch("https://socialbackends.herokuapp.com/nearby")
           const data=await friendsData.json();
         
           setNearByFriends(data.data)
@@ -39,7 +39,7 @@ export default function Map() {
           setViewport({...viewport,longitude:mapData.longi,latitude:mapData.latti})
 
         
-          fetch(`http://localhost:5000/nearby`, {
+          fetch(`https://socialbackends.herokuapp.com/nearby`, {
          method: "POST",
            headers: {
             "Content-Type": "application/json",
